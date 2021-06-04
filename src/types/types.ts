@@ -6,3 +6,9 @@ export interface Character {
     race: string;
     imageUrl: string;
 }
+
+export interface ListCharacter {
+    id: number;
+    name: string;
+    imageUrl: string;
+}
