@@ -10,3 +10,12 @@ export const getCharacters = async(): Promise<Character[]> => {
 
     return json;
 }
+
+export const getCharactersById = async(id: string): Promise<Character> => {
+    const res = await fetch(`URL/${id}`);
+    const json = await res.json();
+
+    if(!res.ok) throw new Error('Uh oh, something went wrong');
+
+    return json;
+}
