@@ -2,7 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './CharacterItem.module.css';
 
-const CharacterItem: React.FC = ({ id, name, imageUrl }) => {
+interface Props {
+    id: number;
+    name: string;
+    imageUrl: string;
+}
+
+const CharacterItem: React.FC<Props> = ({ id, name, imageUrl }) => {
     return (
         <div>
             <Link 
