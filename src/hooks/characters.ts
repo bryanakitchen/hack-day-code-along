@@ -28,7 +28,7 @@ export const useCharacter = () => {
         getCharactersById(id)
           .then(data => setCharacter(data))
           .finally(() => setLoading(false));
-    }, [])
+    }, [id])
 
     return {
         loading,

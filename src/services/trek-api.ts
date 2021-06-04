@@ -12,7 +12,16 @@ export const getCharacters = async(): Promise<Character[]> => {
 }
 
 export const getCharactersById = async(id: string): Promise<Character> => {
-    const res = await fetch(`URL/${id}`);
+    const res = await fetch(`${URL}/${id}`);
+    const json = await res.json();
+
+    if(!res.ok) throw new Error('Uh oh, something went wrong');
+
+    return json;
+}
+
+export const getCharactersByName = async(name: string): Promise<Character[]> => {
+    const res = await fetch(`${URL}/${name}`);
     const json = await res.json();
 
     if(!res.ok) throw new Error('Uh oh, something went wrong');

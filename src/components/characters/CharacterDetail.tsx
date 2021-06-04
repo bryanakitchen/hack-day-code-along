@@ -1,13 +1,12 @@
 import React from 'react';
 import { useHistory } from 'react-router';
-import { useSingleCharacter } from '../../hooks/characters';
+import { useCharacter } from '../../hooks/characters';
 import styles from './CharacterDetail.module.css';
 
-const CharacterDetail = () => {
-  const { loading, character } = useSingleCharacter();
+const CharacterDetail: React.FC = () => {
+  const { loading, character } = useCharacter();
   const history = useHistory();
 
-  
   if(loading || !character) return (
     <div className={styles.loadingBox}>
       <h1 className= {styles.loadingMessage}>
